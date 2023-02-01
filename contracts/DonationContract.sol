@@ -9,7 +9,7 @@ contract DonationContract {
         string hash;
         string description;
         uint256 donationAmount;
-        address payable author;
+        address author;
     }
 
     mapping(uint256 => Org) public orgs;
@@ -29,4 +29,22 @@ contract DonationContract {
         uint256 donationAmount,
         address payable author
     );
+
+    function uploadOrg(string memory _orgHash, string memory _description) public payable {
+        require(bytes(_orgHash).length > 0);
+        require(bytes(_description).length > 0);
+        require(msg.sender != address(0x0));
+        totalOrg++;
+        orgs[totalOrg] = Org(
+            totalOrg,
+            _orgHash,
+            _description,
+            0,
+            msg.sender
+        );
+        emit orgCreated(totalOrg, _orgHash, _description, 0, msg.sender);
+    }
+
+
+    
 }
