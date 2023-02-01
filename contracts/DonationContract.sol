@@ -12,6 +12,21 @@ contract DonationContract {
         address payable author;
     }
 
+    mapping(uint256 => Org) public orgs;
 
+    event orgCreated(
+        uint256 id,
+        string hash,
+        string description,
+        uint256 donationAmount,
+        address payable author
+    );
 
+    event orgDonated(
+        uint256 id,
+        string hash,
+        string description,
+        uint256 donationAmount,
+        address payable author
+    );
 }
