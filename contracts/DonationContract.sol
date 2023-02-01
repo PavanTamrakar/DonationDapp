@@ -1,4 +1,4 @@
-//SPDX-Licence-Identifier: GPL-3.0
+//SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.10;
 
 contract DonationContract {
@@ -12,6 +12,6 @@ contract DonationContract {
         address payable author;
     }
 
-    
+
 
 }
